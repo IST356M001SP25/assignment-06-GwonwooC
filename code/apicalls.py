@@ -1,7 +1,7 @@
 import requests
 
 # Put your CENT Ischool IoT Portal API KEY here.
-APIKEY = "696f7bf01b8b4098f3eaa2a9"
+APIKEY = "55a2742efc6a1466eb51b1de"
 
 def get_google_place_details(google_place_id: str) -> dict:
     '''
@@ -36,7 +36,7 @@ def get_azure_key_phrase_extraction(text: str) -> dict:
     data = {"text": text}
     url = "https://cent.ischool-iot.net/api/azure/keyphrasextraction"
     response = requests.post(url=url, headers=header, data=data)
-    response.raise_for_status
+    response.raise_for_status()
     return response.json()
 
 def get_azure_named_entity_recognition(text: str) -> dict:
